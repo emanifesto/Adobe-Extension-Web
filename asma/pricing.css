@@ -1,14 +1,14 @@
 .white-space{
-    background-color: #000;
+    background-color: #282727;
     margin: 0;
     padding: auto 0;
 }
 
-.table{
+/* .table{
     background-color: #282727;
     margin: 0;
     padding-top: 20px;
-}
+} */
 
 h1{
     margin: 30px 0 80px;
