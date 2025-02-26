@@ -1,6 +1,6 @@
 .white-space{
     background-color: #282727;
-    margin: 0;
+    margin: 10px;
     padding: auto 0;
     border: solid 1px blue
 }
@@ -13,7 +13,7 @@
 
 stripe-pricing-table{
     padding-top: 20px;
-    margin: auto 0;
+    margin: 10px;
     border: 1px solid red;
 }
 
