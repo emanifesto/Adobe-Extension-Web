@@ -2,3 +2,7 @@ body{
     background-color: #282727;
     padding: auto 0;
 }
+
+.upper-line-block{
+    height: 50px;
+  }
