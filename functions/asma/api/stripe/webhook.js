@@ -1,10 +1,9 @@
 
 export const onRequest = (context) => {
 
-    console.log({message: "Hi!"});
-    return new Response("Hello.", {status: 202});
+    console.log({fullRequest: `${context}`, requestBody: `${context.request}`, environment: `${context.env}`});
 
-    // const endpointSecret = "E-man"
+    const endpointSecret = context.env.STRIPE_WH_SECRET
 
-    // return new Response(JSON.stringify({ content: `Connection successful! from ${endpointSecret}`}), { status: 205, headers: {"Content-Type": "application/json"}})
+    return new Response(JSON.stringify({ content: `Connection successful! from ${endpointSecret}`}), { status: 202, headers: {"Content-Type": "application/json"}})
 }
