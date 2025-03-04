@@ -1,5 +1,5 @@
 
-export const onRequest = (context) => {
+export const onRequest = () => {
 
     console.log({message: "Hi!"});
     return new Response("Hello.", {status: 205});
