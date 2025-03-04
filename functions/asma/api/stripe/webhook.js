@@ -1,8 +1,8 @@
 
-export const onRequest = () => {
+export const onRequest = (context) => {
 
     console.log({message: "Hi!"});
-    return new Response("Hello.");
+    return new Response("Hello.", {status: 205});
 
     // const endpointSecret = "E-man"
 
