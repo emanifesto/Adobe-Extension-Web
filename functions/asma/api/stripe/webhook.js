@@ -1,5 +1,3 @@
-import Stripe from 'stripe/lib/stripe.js';
-
 
 export const onRequestPost = async (context) => {
 
