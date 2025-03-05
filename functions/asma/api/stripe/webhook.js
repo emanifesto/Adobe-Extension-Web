@@ -1,7 +1,6 @@
 
-export const onRequest = (context) => {
+export const onRequestPost = (context) => {//onRequestPost
 
-    //console.log({fullRequest: `${context}`, requestBody: `${context.request}`, environment: `${context.env}`});
 
     const endpointSecret = context.env.STRIPE_WH_SECRET
     const IP = context.request.headers.x-real-ip
@@ -50,5 +49,5 @@ export const onRequest = (context) => {
     }
 
    
-    return new Response({ status: 205})
+    return new Response({ status: 202})
 }
