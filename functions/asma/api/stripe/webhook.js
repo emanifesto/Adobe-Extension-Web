@@ -8,7 +8,7 @@ export const onRequestPost = (context) => {//onRequestPost
 
     const event = context.request.body.type
     const pre = context.request.body
-    const info = pre.data.object
+    const info = pre.data['object']
     const stripeID = info.customer
 
 
@@ -50,5 +50,5 @@ export const onRequestPost = (context) => {//onRequestPost
     }
 
    
-    return new Response({ status: 205})//Response.status = 205;?
+    return new Response(JSON.stringify('Hello'), { status: 202})//Response.status = 205;?
 }
