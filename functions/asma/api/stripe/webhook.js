@@ -7,11 +7,10 @@ export const onRequestPost = ({request, env}) => {//onRequestPost
     //some verification code
 
     const event = request.body.type
-    const pre = request.body.data
-    console.log({data: `${pre}`})
-    console.log({object: `${pre[0]}`})
+    const pre = request.body
+    console.log({data: `${pre.json()}`})
     return new Response("Abrupt end.")
-    const info = pre.object
+    const info = pre.data.object
     const stripeID = info.customer
 
 
