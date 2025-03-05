@@ -8,6 +8,9 @@ export const onRequestPost = ({request, env}) => {//onRequestPost
 
     const event = request.body.type
     const pre = request.body.data
+    console.log({data: `${pre}`})
+    console.log({object: `${pre[0]}`})
+    return new Response("Abrupt end.")
     const info = pre.object
     const stripeID = info.customer
 
