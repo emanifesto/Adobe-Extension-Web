@@ -1,14 +1,14 @@
 
-export const onRequestPost = (context) => {//onRequestPost
+export const onRequestPost = ({request, env}) => {//onRequestPost
 
 
-    const endpointSecret = context.env.STRIPE_WH_SECRET
-    const IP = context.request.headers['x-real-ip']
+    const endpointSecret = env.STRIPE_WH_SECRET
+    const IP = request.headers['x-real-ip']
     //some verification code
 
-    const event = context.request.body.type
-    const pre = context.request.body
-    const info = pre.data['object']
+    const event = request.body.type
+    const pre = request.body.data
+    const info = pre.object
     const stripeID = info.customer
 
 
@@ -34,9 +34,9 @@ export const onRequestPost = (context) => {//onRequestPost
             const product = info.plan.product //csd
             const update = ""
 
-            if (product === context.env.PRODUCT_1){
+            if (product === env.PRODUCT_1){
                 let update = "metadata button access"
-            }else if (product === context.env.PRODUCT_2){
+            }else if (product === env.PRODUCT_2){
                 let update = "hands free access"
             }else{
                 console.log(`Unexpected product ${product}`)
