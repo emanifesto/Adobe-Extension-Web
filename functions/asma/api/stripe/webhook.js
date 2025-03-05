@@ -8,7 +8,9 @@ export const onRequestPost = ({request, env}) => {//onRequestPost
 
     const event = request.body.type
     const pre = request.body
-    console.log({data: `${pre.json()}`})
+    console.log({test1: `${request.body}`})
+    console.log({test2: `${request.body['data']}`})
+    console.log({test3: `${request.body.data}`})
     return new Response("Abrupt end.")
     const info = pre.data.object
     const stripeID = info.customer
