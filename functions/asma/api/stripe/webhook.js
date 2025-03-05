@@ -3,7 +3,7 @@ export const onRequestPost = (context) => {//onRequestPost
 
 
     const endpointSecret = context.env.STRIPE_WH_SECRET
-    const IP = context.request.headers.x-real-ip
+    const IP = context.request.headers['x-real-ip']
     //some verification code
 
     const event = context.request.body.type
@@ -49,5 +49,5 @@ export const onRequestPost = (context) => {//onRequestPost
     }
 
    
-    return new Response({ status: 202})
+    return new Response({ status: 205})//Response.status = 205;?
 }
