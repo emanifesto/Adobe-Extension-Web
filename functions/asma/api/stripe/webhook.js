@@ -7,7 +7,8 @@ export const onRequestPost = (context) => {//onRequestPost
     //some verification code
 
     const event = context.request.body.type
-    const info = context.request.body.data['object']
+    const pre = context.request.body
+    const info = pre.data.object
     const stripeID = info.customer
 
 
