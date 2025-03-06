@@ -11,7 +11,11 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
     console.log({test1: `${request.body}`})
     const test = await request.json()
     console.log({test2: `${test}`})
-    console.log({test3: `${test.data}`})
+    console.log({test3: `${test.body}`})
+    console.log({test4: `${event}`})
+    console.log({test5: `${test.event}`})
+    console.log({test6: `${test.body.event}`})
+    console.log({test7: `${IP}`})
 
 
     return new Response("Abrupt end.")
