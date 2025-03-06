@@ -3,18 +3,13 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
 
 
     const endpointSecret = env.STRIPE_WH_SECRET
-    const IP = request.headers['x-real-ip']
+    // const IP = request.headers['x-real-ip']
     //some verification code
 
-    const event = request.body.type
-    const pre = request.body
-    console.log({test1: `${request.body}`})
-    const test = await request.json()
-    console.log({test2: `${test}`})
-    console.log({test3: `${test.data}`})
-    console.log({test4: `${test.data.object}`})
-    console.log({test5: `${test.type}`})
-    console.log({test6: `${test.headers}`})
+
+    const pre = await request.json()
+    const event = pre.type
+    console.log(new Map(request.headers))
 
 
     return new Response("Abrupt end.")
