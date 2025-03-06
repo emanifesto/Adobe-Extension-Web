@@ -3,13 +3,13 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
 
 
     const endpointSecret = env.STRIPE_WH_SECRET
-    // const IP = request.headers['x-real-ip']
+    const head = new Map(request.headers)
     //some verification code
 
 
     const pre = await request.json()
     const event = pre.type
-    console.log(new Map(request.headers))
+    console.log(head['CF-Connecting-IP'])
 
 
     return new Response("Abrupt end.")
