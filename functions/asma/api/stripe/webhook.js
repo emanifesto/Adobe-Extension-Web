@@ -13,6 +13,7 @@ export const onRequestPost = async ({request, env}) => {
 
     const info = body.data.object
     const stripeID = info.customer
+    let update = null
 
 
     console.log({IP: `${IP}`, sss: `${endpointSecret}`, event: `${event}`, data: `${info}`})
@@ -25,9 +26,9 @@ export const onRequestPost = async ({request, env}) => {
             const type = info.allow_promotion_codes //csc
 
             if (type){
-                const update = "hands free access" 
+                update = "hands free access" 
             }else{
-                const update = "metadata button access"
+                update = "metadata button access"
             }
 
             console.log({asmaID: `${asmaID}`, stripeID: `${stripeID}`, name: `${name}`, email: `${email}`, thingToUpdate: `${update}`})
@@ -35,12 +36,11 @@ export const onRequestPost = async ({request, env}) => {
 
         case "customer.subscription.deleted":
             const product = info.plan.product //csd
-            const update = ""
 
             if (product === env.PRODUCT_1){
-                let update = "metadata button access"
+                update = "metadata button access"
             }else if (product === env.PRODUCT_2){
-                let update = "hands free access"
+                update = "hands free access"
             }else{
                 console.log(`Unexpected product ${product}`)
             }
