@@ -15,11 +15,12 @@ class ElementHandler{
 
 export async function onRequest({request, env, params}){
     const client = request.url.split('?')[1]
-    console.log(client)
-
 
     const response = await env.ASSETS.fetch(request)
+    
+    if (client){
+        return new HTMLRewriter().on('stripe-pricing-table', new ElementHandler(client)).transform(response)
+    }
 
-    return new Response({status: 200})
-    return new HTMLRewriter().on('stripe-pricing-table', new ElementHandler(client)).transform(response)
+    return response
 }
