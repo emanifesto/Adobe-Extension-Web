@@ -1,5 +1,5 @@
 
-export const onRequestPost = ({request, env}) => {//onRequestPost
+export const onRequestPost = async ({request, env}) => {//onRequestPost
 
 
     const endpointSecret = env.STRIPE_WH_SECRET
@@ -9,12 +9,11 @@ export const onRequestPost = ({request, env}) => {//onRequestPost
     const event = request.body.type
     const pre = request.body
     console.log({test1: `${request.body}`})
-    console.log({test2: `${request.body['data']}`})
-    console.log({test3: `${request.body.data}`})
-    console.log({test4: `${request.body.type}`})
-    console.log({test5: `${request.body[0]}`})
-    console.log({test6: `${request.body.event}`})
-    console.log({test7: `${request.body['event']}`})
+    const test = request.json()
+    console.log({test2: `${test}`})
+    console.log({test3: `${test.data}`})
+
+
     return new Response("Abrupt end.")
     const info = pre.data.object
     const stripeID = info.customer
