@@ -9,7 +9,7 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
     const event = request.body.type
     const pre = request.body
     console.log({test1: `${request.body}`})
-    const test = request.json()
+    const test = await request.json()
     console.log({test2: `${test}`})
     console.log({test3: `${test.data}`})
 
