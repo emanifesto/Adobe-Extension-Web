@@ -13,7 +13,8 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
     console.log({test2: `${test}`})
     console.log({test3: `${test.data}`})
     console.log({test4: `${test.data.object}`})
-    console.log({test5: `${IP}`})
+    console.log({test5: `${test.type}`})
+    console.log({test6: `${test.headers}`})
 
 
     return new Response("Abrupt end.")
