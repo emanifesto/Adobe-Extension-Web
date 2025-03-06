@@ -14,7 +14,10 @@ class ElementHandler{
 
 
 export async function onRequest({request, env, params}){
-    console.log(params)
+    // const client = 
+    console.log(request)
+    console.log(request.json())
+
 
     const response = await env.ASSETS.fetch(request)
 
