@@ -3,17 +3,17 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
 
 
     const endpointSecret = env.STRIPE_WH_SECRET
-    const head = new Map(request.headers)
+    const IP = request.headers.get("CF-Connecting-IP")
     //some verification code
 
 
-    const pre = await request.json()
-    const event = pre.type
-    console.log(head['CF-Connecting-IP'])
+    const body = await request.json()
+    const event = body.type
+    console.log(IP)
 
 
     return new Response("Abrupt end.")
-    const info = pre.data.object
+    const info = body.data.object
     const stripeID = info.customer
 
 
