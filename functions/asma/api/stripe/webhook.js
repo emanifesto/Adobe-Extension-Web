@@ -1,5 +1,5 @@
 
-export const onRequestPost = async ({request, env}) => {//onRequestPost
+export const onRequestPost = async ({request, env}) => {
 
 
     const endpointSecret = env.STRIPE_WH_SECRET
@@ -9,10 +9,8 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
 
     const body = await request.json()
     const event = body.type
-    console.log(IP)
 
 
-    return new Response("Abrupt end.")
     const info = body.data.object
     const stripeID = info.customer
 
@@ -55,5 +53,5 @@ export const onRequestPost = async ({request, env}) => {//onRequestPost
     }
 
    
-    return new Response(JSON.stringify('Hello'), { status: 202})//Response.status = 205;?
+    return new Response({ status: 205})//Response.status = 205;?
 }
