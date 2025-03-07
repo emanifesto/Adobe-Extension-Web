@@ -19,7 +19,7 @@ export const onRequestPost = async ({request, env}) => {
     let update = null
 
 
-    console.log({IP: `${IP}`, sss: `${endpointSecret}`, event: `${event}`, data: `${info}`})
+    console.log({IP: `${IP}`, event: `${event}`, data: `${info}`})
 
     switch (event){
         case "checkout.session.completed":
