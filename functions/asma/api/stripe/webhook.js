@@ -34,7 +34,8 @@ export const onRequestPost = async ({request, env}) => {
                 update = "metadata_button"
             }
 
-            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ${update}) VALUES (${asmaID}, "${stripeID}", "${name}", "${email}", "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ${update} = "provisioned"`)
+            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ?) VALUES ("${asmaID}", "${stripeID}", "${name}", "${email}", "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ? = "provisioned"`)
+            .bind(update, update)
             await query.run()
             break
 
@@ -50,7 +51,7 @@ export const onRequestPost = async ({request, env}) => {
                 break
             }
 
-            query = env.DB.prepare(`UPDATE users SET ? = null WHERE stripe_id = ${stripeID}`)
+            query = env.DB.prepare(`UPDATE users SET ? = null WHERE stripe_id = "${stripeID}"`)
             .bind(update)
             await query.run()
             break
