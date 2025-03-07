@@ -3,7 +3,7 @@ export const onRequestPost = async ({request, env}) => {
 
 
     // const endpointSecret = env.STRIPE_WH_SECRET
-    const IPS = env.STRIPE_IPS
+    const IPS = env.STRIPE_IPS.split(', ')
     const IP = request.headers.get("CF-Connecting-IP")
     console.log(IPS)
     if (!IPS.includes(IP)){
