@@ -9,6 +9,7 @@ export const onRequestPost = async ({request, env}) => {
     if (!IPS.includes(IP)){
         return new Response({status: 400})
     }
+    console.log(IPS.indexOf(IP))
 
     const body = await request.json()
     const event = body.type
