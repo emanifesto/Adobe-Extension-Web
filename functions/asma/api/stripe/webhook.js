@@ -34,7 +34,7 @@ export const onRequestPost = async ({request, env}) => {
                 update = "metadata_button"
             }
 
-            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ${update}) VALUES (${asmaID}, ${stripeID}, ${name}, ${email}, "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ${update} = "provisioned"`)
+            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ${update}) VALUES (${asmaID}, ${stripeID}, "${name}", ${email}, "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ${update} = "provisioned"`)
             await query.run()
             break
 
