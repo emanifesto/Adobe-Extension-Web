@@ -5,11 +5,11 @@ export const onRequestPost = async ({request, env}) => {
     // const endpointSecret = env.STRIPE_WH_SECRET
     const IPS = env.STRIPE_IPS.split(', ')
     const IP = request.headers.get("CF-Connecting-IP")
-    console.log(IPS)
+
     if (!IPS.includes(IP)){
         return new Response({status: 400})
     }
-    console.log(IPS.indexOf(IP))
+
 
     const body = await request.json()
     const event = body.type
@@ -18,7 +18,7 @@ export const onRequestPost = async ({request, env}) => {
     const info = body.data.object
     const stripeID = info.customer
     let update = null
-
+    let query
 
     console.log({IP: `${IP}`, event: `${event}`, data: `${info}`})
 
@@ -30,26 +30,31 @@ export const onRequestPost = async ({request, env}) => {
             const type = info.allow_promotion_codes //csc
 
             if (type){
-                update = "hands free access" 
+                update = "hands_free" 
             }else{
-                update = "metadata button access"
+                update = "metadata_button"
             }
 
-            console.log({asmaID: `${asmaID}`, stripeID: `${stripeID}`, name: `${name}`, email: `${email}`, thingToUpdate: `${update}`})
+            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ?) VALUES (${asmaID}, ${stripeID}, ${name}, ${email}, "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ? = excluded.?`)
+            .bind(update, update, update)
+            await query.run()
             break
 
         case "customer.subscription.deleted":
             const product = info.plan.product //csd
 
             if (product === env.PRODUCT_1){
-                update = "metadata button access"
+                update = "metadata_button"
             }else if (product === env.PRODUCT_2){
-                update = "hands free access"
+                update = "hands_free"
             }else{
                 console.log(`Unexpected product ${product}`)
+                break
             }
 
-            console.log({stripeID: `${stripeID}`, thingToUpdate: `${update}`})
+            query = env.DB.prepare(`UPDATE users SET ? = null WHERE stripe_id = ${stripeID}`)
+            .bind(update)
+            await query.run()
             break
 
         default:
