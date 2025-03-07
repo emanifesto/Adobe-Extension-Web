@@ -1,4 +1,4 @@
-export const onRequestGet = async ({request, env}) => {
+export const onRequestPost = async ({request, env}) => {
     const body = request.json()
 
     
