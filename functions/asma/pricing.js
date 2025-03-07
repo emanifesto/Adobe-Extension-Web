@@ -10,10 +10,6 @@ class ElementHandler{
 
 }
 
-
-
-
-
 export async function onRequest({request, env, params}){
     const client = request.url.split('?')[1]
 

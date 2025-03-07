@@ -2,10 +2,13 @@
 export const onRequestPost = async ({request, env}) => {
 
 
-    const endpointSecret = env.STRIPE_WH_SECRET
+    // const endpointSecret = env.STRIPE_WH_SECRET
+    const IPS = env.STRIPE_IPS
     const IP = request.headers.get("CF-Connecting-IP")
-    //some verification code
-
+    console.log(IPS)
+    if (!IPS.includes(IP)){
+        return new Response({status: 400})
+    }
 
     const body = await request.json()
     const event = body.type
@@ -52,6 +55,5 @@ export const onRequestPost = async ({request, env}) => {
             console.log(`Unexpected event type ${event}.`)
     }
 
-   //
     return new Response({ status: 205})//Response.status = 205;?
 }
