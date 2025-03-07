@@ -19,5 +19,5 @@ export async function onRequest({request, env, params}){
         return new HTMLRewriter().on('stripe-pricing-table', new ElementHandler(client)).transform(response)
     }
 
-    return new Response(window.location.href = 'https://google.com')
+    return 'https://google.com'
 }
