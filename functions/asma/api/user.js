@@ -1,8 +1,5 @@
 export const onRequestPost = async ({request, env}) => {
 
-    request.headers.set({"Access-Control-Allow-Origin": "chrome-extension://gnapbdecbbnaalohhpcocalcefhlofnk"});
-    request.headers.set({"Access-Control-Allow-Methods": "GET, POST, OPTIONS"});
-    request.headers.set({"Access-Control-Allow-Headers": "Content-Type, Authorization"});
     const body = request.json()
 
     
