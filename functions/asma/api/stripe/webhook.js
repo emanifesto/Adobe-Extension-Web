@@ -20,7 +20,6 @@ export const onRequestPost = async ({request, env}) => {
     let update = null
     let query
 
-    console.log({IP: `${IP}`, event: `${event}`, data: `${info}`})
 
     switch (event){
         case "checkout.session.completed":
@@ -35,8 +34,7 @@ export const onRequestPost = async ({request, env}) => {
                 update = "metadata_button"
             }
 
-            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ?) VALUES (${asmaID}, ${stripeID}, ${name}, ${email}, "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ? = excluded.?`)
-            .bind(update, update, update)
+            query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ${update}) VALUES (${asmaID}, ${stripeID}, ${name}, ${email}, "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ${update} = "provisioned"`)
             await query.run()
             break
 
