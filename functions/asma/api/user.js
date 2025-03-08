@@ -19,7 +19,6 @@ export const onRequestPost = async ({request, env}) => {
     const data = await query.run()
 
     if (!data.results[0]){
-        console.log('empty results')
         return new Response(JSON.stringify({payment: null}))
     }
 

@@ -17,6 +17,7 @@ export const onRequestPost = async ({request, env}) => {
 
     const info = body.data.object
     const stripeID = info.customer
+    const product = info.plan.product //csd //csu
     let update = null
     let query
 
@@ -38,8 +39,22 @@ export const onRequestPost = async ({request, env}) => {
             await query.run()
             break
 
+        case "customer.subscription.updated":
+
+            if (product === env.PRODUCT_1){
+                update = "metadata_button"
+            }else if (product === env.PRODUCT_2){
+                update = "hands_free"
+            }else{
+                console.log(`Unexpected product ${product}`)
+                break
+            }
+
+            query = env.DB.prepare(`UPDATE users SET ${update} = "provisioned" WHERE stripe_id = "${stripeID}"`)
+            await query.run()
+            break
+
         case "customer.subscription.deleted":
-            const product = info.plan.product //csd
 
             if (product === env.PRODUCT_1){
                 update = "metadata_button"
