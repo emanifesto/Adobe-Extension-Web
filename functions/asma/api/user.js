@@ -1,6 +1,6 @@
 export const onRequestPost = async ({request, env}) => {
 
-    const body = request.json()
+    const body = await request.json()
 
     
     const auth = request.headers.get('Authorization')
