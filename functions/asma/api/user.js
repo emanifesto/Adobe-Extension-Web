@@ -18,7 +18,7 @@ export const onRequestPost = async ({request, env}) => {
     console.log(`${extensionID} ${origin}`)
     console.log(asmaID)
     console.log(body.info)
-    const query = env.DB.prepare(`SELECT 1 FROM users WHERE asma_id = "${asmaID}"`)
+    const query = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}"`)
     const data = await query.run()
 
     console.log(data)
