@@ -15,13 +15,12 @@ export const onRequestPost = async ({request, env}) => {
     const auth = request.headers.get('Authorization')
     const asmaID = auth.split(' ')[1]
 
-    console.log(`${extensionID} ${origin}`)
-    console.log(asmaID)
-    console.log(body.info)
     const query = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}"`)
     const data = await query.run()
 
     console.log(data)
+    console.log(data['results'])
+    console.log(data.results)
 
 
     return new Response(JSON.stringify({payment: null}))
