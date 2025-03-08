@@ -25,7 +25,7 @@ export const onRequestPost = async ({request, env}) => {
     console.log(data.results.metadata_button)
     console.log(data.results.hands_free)
 
-    console.log(data.results[0])
+    console.log(data.results[0][0])
 
 
     return new Response(JSON.stringify({payment: null}))
