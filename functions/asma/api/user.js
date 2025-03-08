@@ -19,6 +19,8 @@ export const onRequestPost = async ({request, env}) => {
     const data = await query.run()
 
     console.log(data.results[0])
+    console.log(data.results[0] === null)
+    console.log(data.results[0] === "null")
 
     if (data.results[0]){
         return new Response(JSON.stringify({payment: null}))
