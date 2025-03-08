@@ -5,12 +5,13 @@ export const onRequestPost = async ({request, env}) => {
     const body = await request.json()
 
     if (extensionID !== origin){
-        console.log('failed check 1')
+        console.log(`${extensionID} ${origin}`)
         return new Response({status: 400})
     }
 
     if (body.info !== "payment"){
         console.log('failed check 2')
+        console.log(body.info)
         return new Response({status: 400})
     }
 
