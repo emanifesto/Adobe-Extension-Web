@@ -19,14 +19,19 @@ export const onRequestPost = async ({request, env}) => {
     const data = await query.run()
 
     console.log(data)
-    console.log(data.results['metadata_button'])
-    console.log(data.results['hands_free'])
 
-    console.log(data.results.metadata_button)
-    console.log(data.results.hands_free)
+    console.log(data.results[0].asma_id)
 
-    console.log(data.results[0]['asma_id'])
+    const prod_1 = data.results[0]['metadata_button']
+    const prod_2 = data.results[0]['hands_free']
 
+    if (prod_2 === "provisioned"){
+        return new Response(JSON.stringify({payment: "hands free"}))
+    }
+
+    if (prod_1 === "provisioned"){
+        return new Response(JSON.stringify({payment: "metadata button"}))
+    }
 
     return new Response(JSON.stringify({payment: null}))
 }
