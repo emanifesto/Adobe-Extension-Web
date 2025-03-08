@@ -18,8 +18,8 @@ export const onRequestPost = async ({request, env}) => {
     const query = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}"`)
     const data = await query.run()
 
-    console.log(data.results[0].length())
-    
+    console.log(data.results.length())
+
     if (data.results[0]){
         return new Response(JSON.stringify({payment: null}))
     }
