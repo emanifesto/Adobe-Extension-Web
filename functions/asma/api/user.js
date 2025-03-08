@@ -24,5 +24,5 @@ export const onRequestPost = async ({request, env}) => {
     console.log(data)
 
 
-    return new Response({payment: null})
+    return new Response(JSON.stringify({payment: null}))
 }
