@@ -19,8 +19,11 @@ export const onRequestPost = async ({request, env}) => {
     const data = await query.run()
 
     console.log(data)
-    console.log(data['results'])
-    console.log(data.results)
+    console.log(data.results['metadata_button'])
+    console.log(data.results['hands_free'])
+
+    console.log(data.results.metadata_button)
+    console.log(data.results.hands_free)
 
 
     return new Response(JSON.stringify({payment: null}))
