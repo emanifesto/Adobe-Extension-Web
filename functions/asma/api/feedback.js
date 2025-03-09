@@ -22,7 +22,7 @@ export const onRequestPost = async({request, env}) => {
     const email = body.email
     const subject = body.subject
     const feedback = body.feedback
-    const entries = "null"
+    let entries = "null"
     if(data.results[0]){
         entries = `asmaID - ${data.results[0].asma_id}\nstripeID - ${data.results[0].stripe_id}\nname - ${data.results[0].name}\nemail - ${data.results[0].email}\nbutton - ${data.results[0].metadata_button}\nautomation - ${data.results[0].hands_free}`
     }
