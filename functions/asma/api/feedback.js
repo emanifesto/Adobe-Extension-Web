@@ -37,12 +37,16 @@ export const onRequestPost = async({request, env}) => {
             text: `Feedback: ${feedback}\n\nCustomer email: ${email}\n\nDatabase entry:\n${entries}`
         })
     })
+    const erb = await emailResponse.json()
+    const status = erb.name
 
-    if (emailResponse.ok){
-        console.log(await emailResponse.json())
-        return new Response({status: 200})
-    }else{
-        console.log(await emailResponse.json())
+    if (status === 'validation_error'){
+        console.log(erb)
+        console.log('failed')
         return new Response({status: 400})
+    }else{
+        console.log(erb)
+        console.log('success')
+        return new Response({status: 200})
     }
 }
