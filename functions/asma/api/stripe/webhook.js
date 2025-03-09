@@ -17,8 +17,8 @@ export const onRequestPost = async ({request, env}) => {
 
     const info = body.data.object
     const stripeID = info.customer
-    const product = info.plan.product //csd //csu
-    let update = null
+    let product
+    let update
     let query
 
 
@@ -40,6 +40,8 @@ export const onRequestPost = async ({request, env}) => {
             break
 
         case "customer.subscription.updated":
+            
+            product = info.plan.product //csd //csu
             let alt = null
             
             if (product === env.PRODUCT_1){
@@ -58,6 +60,8 @@ export const onRequestPost = async ({request, env}) => {
             break
 
         case "customer.subscription.deleted":
+
+            product = info.plan.product //csd //csu
 
             if (product === env.PRODUCT_1){
                 update = "metadata_button"
