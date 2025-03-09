@@ -23,5 +23,6 @@ export const onRequestPost = async({request, env}) => {
     const subject = body.subject
     const feedback = body.feedback
 
-    console.log(`${email} ${subject} ${feedback}`)
+    console.log(`${email} ${subject} ${feedback} ${data.results[0].stripe_id}`)
+    return new Response({status: 200})
 }
