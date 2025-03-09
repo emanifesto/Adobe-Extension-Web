@@ -5,11 +5,11 @@ export const onRequestPost = async ({request, env}) => {
     const body = await request.json()
 
     if (extensionID !== origin){
-        return new Response({status: 400})
+        return new Response('Fail', {status: 400})
     }
 
     if (body.info !== "payment"){
-        return new Response({status: 400})
+        return new Response('Fail', {status: 400})
     }
 
     const auth = request.headers.get('Authorization')

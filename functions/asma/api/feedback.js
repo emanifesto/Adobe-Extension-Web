@@ -6,7 +6,7 @@ export const onRequestPost = async({request, env}) => {
     const body = await request.json()
 
     if (extensionID !== origin){
-        return new Response({status: 400})
+        return new Response('Fail', {status: 400})
     }
 
     const auth = request.headers.get('Authorization')
@@ -43,10 +43,10 @@ export const onRequestPost = async({request, env}) => {
     if (status === 'validation_error'){
         console.log(erb)
         console.log('failed')
-        return new Response({status: 400})
+        return new Response('Fail', {status: 400})
     }else{
         console.log(erb)
         console.log('success')
-        return new Response({status: 200})
+        return new Response('Success', {status: 200})
     }
 }

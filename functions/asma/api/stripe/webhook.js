@@ -7,7 +7,7 @@ export const onRequestPost = async ({request, env}) => {
     const IP = request.headers.get("CF-Connecting-IP")
 
     if (!IPS.includes(IP)){
-        return new Response({status: 400})
+        return new Response('Fail', {status: 400})
     }
 
 
@@ -73,5 +73,5 @@ export const onRequestPost = async ({request, env}) => {
             console.log(`Unexpected event type ${event}.`)
     }
 
-    return new Response({ status: 205})//Response.status = 205;?
+    return new Response('Success', { status: 200})//Response.status = 205;?
 }
