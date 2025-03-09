@@ -39,10 +39,10 @@ export const onRequestPost = async({request, env}) => {
     })
 
     if (emailResponse.ok){
-        console.log(emailResponse)
+        console.log(await emailResponse.json())
         return new Response({status: 200})
     }else{
-        console.log(emailResponse)
+        console.log(await emailResponse.json())
         return new Response({status: 400})
     }
 }
