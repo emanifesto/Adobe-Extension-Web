@@ -40,17 +40,20 @@ export const onRequestPost = async ({request, env}) => {
             break
 
         case "customer.subscription.updated":
-
+            let alt = null
+            
             if (product === env.PRODUCT_1){
                 update = "metadata_button"
+                alt = "hands_free"
             }else if (product === env.PRODUCT_2){
                 update = "hands_free"
+                alt = "metadata_button"
             }else{
                 console.log(`Unexpected product ${product}`)
                 break
             }
 
-            query = env.DB.prepare(`UPDATE users SET ${update} = "provisioned" WHERE stripe_id = "${stripeID}"`)
+            query = env.DB.prepare(`UPDATE users SET ${update} = "provisioned", ${alt} = "null" WHERE stripe_id = "${stripeID}"`)
             await query.run()
             break
 
