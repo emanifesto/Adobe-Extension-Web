@@ -33,8 +33,8 @@ export const onRequestPost = async({request, env}) => {
         body: JSON.stringify({
             from: `${env.ASMA_EMAIL}`,
             to: `${env.PERSONAL_EMAIL}`,
-            subject: `${subject}`,
-            text: `Feedback: ${feedback}\n\nCustomer email: ${email}\n\nDatabase entry:\n${entries}`
+            subject: `${subject} from ${email}`,
+            text: `Feedback:\n${feedback}\n\nDatabase entry:\n${entries}`
         })
     })
     const erb = await emailResponse.json()
