@@ -22,21 +22,27 @@ export const onRequestPost = async({request, env}) => {
     const email = body.email
     const subject = body.subject
     const feedback = body.feedback
+    const entries = "null"
+    if(data.results[0]){
+        entries = `asmaID - ${data.results[0].asma_id}\nstripeID - ${data.results[0].stripe_id}\nname - ${data.results[0].name}\nemail - ${data.results[0].email}\nbutton - ${data.results[0].metadata_button}\nautomation - ${data.results[0].hands_free}`
+    }
 
     const emailResponse = await fetch('https://api.resend.com/emails', {
         method: "POST",
         headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
         body: JSON.stringify({
             from: `${env.ASMA_EMAIL}`,
-            to: `${env.PERSONAL_EMAIL}`,
+            to: `${env.PERSONALs_EMAIL}`,
             subject: `${subject}`,
-            text: `Feedback: ${feedback}\n\nCustomer email: ${email}\n\nDatabase entry:\n${data.results[0]}`
+            text: `Feedback: ${feedback}\n\nCustomer email: ${email}\n\nDatabase entry:\n${entries}`
         })
     })
 
     if (emailResponse.ok){
+        console.log(emailResponse)
         return new Response({status: 200})
     }else{
+        console.log(emailResponse)
         return new Response({status: 400})
     }
 }
