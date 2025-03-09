@@ -31,7 +31,7 @@ export const onRequestPost = async({request, env}) => {
         method: "POST",
         headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
         body: JSON.stringify({
-            from: `${env.ASMAs_EMAIL}`,
+            from: `${env.ASMA_EMAIL}`,
             to: `${env.PERSONAL_EMAIL}`,
             subject: `${subject}`,
             text: `Feedback: ${feedback}\n\nCustomer email: ${email}\n\nDatabase entry:\n${entries}`
@@ -41,12 +41,8 @@ export const onRequestPost = async({request, env}) => {
     const status = erb.name
 
     if (status === 'validation_error'){
-        console.log(erb)
-        console.log('failed')
         return new Response('Fail', {status: 400})
     }else{
-        console.log(erb)
-        console.log('success')
         return new Response('Success', {status: 200})
     }
 }
