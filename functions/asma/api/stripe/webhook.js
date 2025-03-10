@@ -72,7 +72,7 @@ export const onRequestPost = async ({request, env}) => {
                 break
             }
 
-            query = env.DB.prepare(`UPDATE users SET ${update} = null WHERE stripe_id = "${stripeID}"`)
+            query = env.DB.prepare(`UPDATE users SET ${update} = "null" WHERE stripe_id = "${stripeID}"`)
             await query.run()
             break
 
