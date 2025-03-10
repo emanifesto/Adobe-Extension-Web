@@ -39,13 +39,14 @@ export async function onRequest({request, env}){
                 method: "POST",
                 headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`}),
                 body: {
-                    "customer": `${customer}`,
+                    customer: `${customer}`,
                     components: {
                         pricing_table: {
                             enabled: true,
                         },
                     },
-                }
+                },
+                customer: `${customer}`,
             })
             console.log(customerSession)
             const csr = await customerSession.json()
