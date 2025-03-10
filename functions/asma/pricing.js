@@ -36,10 +36,10 @@ export async function onRequest({request, env}){
                 method: "POST",
                 headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`}),
                 body: JSON.stringify({
-                    customer: `${customer}`,
-                    components: {
-                        pricing_table: {
-                            enabled: true,
+                    "customer": `${customer}`,
+                    "components": {
+                        "pricing_table": {
+                            "enabled": true,
                         },
                     },
                 }),
