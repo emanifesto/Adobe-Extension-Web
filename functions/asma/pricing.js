@@ -35,7 +35,7 @@ export async function onRequest({request, env}){
             const customerSession = await fetch('https://api.stripe.com/v1/customer_sessions', {
                 method: "POST",
                 headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`, "Content-Type": 'application/x-www-form-urlencoded'}),
-                body: ({
+                body: new URLSearchParams({
                     customer: `${customer}`,
                     components: {
                         pricing_table: {
