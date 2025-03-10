@@ -37,11 +37,11 @@ export async function onRequest({request, env}){
                 headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`, "Content-Type": 'application/x-www-form-urlencoded'}),
                 body: new URLSearchParams({
                     customer: `${customer}`,
-                    components: JSON.stringify({
-                        pricing_table: {
-                            enabled: true,
+                    components: {
+                        "pricing_table": {
+                            "enabled": true,
                         },
-                    }),
+                    },
                 }),
             })
             console.log(customerSession)
