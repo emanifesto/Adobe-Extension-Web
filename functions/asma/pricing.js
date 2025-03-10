@@ -37,7 +37,7 @@ export async function onRequest({request, env}){
 
             const customerSession = await fetch('https://api.stripe.com/v1/customer_sessions', {
                 method: "POST",
-                headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`}),
+                headers: new Headers({"Authorization": `Bearer hhh${STRIPE_API_KEY}`}),
                 body: {
                     customer: `${customer}`,
                     components: {
