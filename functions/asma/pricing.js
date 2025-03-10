@@ -26,11 +26,8 @@ export async function onRequest({request, env}){
         const data = await query.run()
         let client_secret = null
 
-        console.log(data)
-        console.log(data.results[0])
 
         if (data.results[0]){
-            console.log(data.results[0])
 
             const STRIPE_API_KEY = env.STRIPE_SECRET
             const customer = data.results[0].stripe_id
@@ -38,15 +35,14 @@ export async function onRequest({request, env}){
             const customerSession = await fetch('https://api.stripe.com/v1/customer_sessions', {
                 method: "POST",
                 headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`}),
-                body: {
+                body: JSON.stringify({
                     customer: `${customer}`,
                     components: {
                         pricing_table: {
                             enabled: true,
                         },
                     },
-                },
-                customer: `${customer}`,
+                }),
             })
             console.log(customerSession)
             const csr = await customerSession.json()
