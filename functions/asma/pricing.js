@@ -25,6 +25,9 @@ export async function onRequest({request, env}){
         const query = env.DB.prepare(`SELECT * FROM users WHERE asma_id = ${client}`)
         const data = query.run()
         let client_secret = null
+
+        console.log(data)
+        console.log(data.results[0])
         
         if (data.results[0]){
             console.log(data.results[0])
