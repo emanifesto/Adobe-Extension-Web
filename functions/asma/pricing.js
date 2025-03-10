@@ -37,9 +37,9 @@ export async function onRequest({request, env}){
 
             const customerSession = await fetch('https://api.stripe.com/v1/customer_sessions', {
                 method: "POST",
-                headers: new Headers({"Authorization": `Bearer hhh${STRIPE_API_KEY}`}),
+                headers: new Headers({"Authorization": `Bearer ${STRIPE_API_KEY}`}),
                 body: {
-                    customer: `${customer}`,
+                    "customer": `${customer}`,
                     components: {
                         pricing_table: {
                             enabled: true,
@@ -49,7 +49,7 @@ export async function onRequest({request, env}){
             })
             console.log(customerSession)
             const csr = await customerSession.json()
-            console.log(csr)
+            console.log(csr) //csr.error.type === "invalid_request_error"
 
             client_secret = csr.client_secret
             console.log(client_secret)
