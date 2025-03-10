@@ -4,10 +4,6 @@ class ClientHandler{
         this.client_secret = client_secret
     }
 
-    constructor(client){
-        this.client = client
-    }
-
     element(element){
         const client = this.client
         element.setAttribute("client-reference-id", client)
@@ -28,8 +24,8 @@ export async function onRequest({request, env}){
 
         const query = env.DB.prepare(`SELECT * FROM users WHERE asma_id = ${client}`)
         const data = query.run()
-
-
+        let client_secret = null
+        
         if (data.results[0]){
             console.log(data.results[0])
 
@@ -52,14 +48,14 @@ export async function onRequest({request, env}){
             const csr = await customerSession.json()
             console.log(csr)
 
-            const client_secret = csr.client_secret
+            client_secret = csr.client_secret
             console.log(client_secret)
 
-            return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
+            // return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
         }
 
 
-        return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client)).transform(response)
+        return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
     }
 
     return response
