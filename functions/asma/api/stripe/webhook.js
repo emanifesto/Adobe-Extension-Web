@@ -51,9 +51,6 @@ export const onRequestPost = async ({request, env}) => {
                             trial_end: "now"
                         })
                     })
-
-                    const sr = await subscription.json()
-                    console.log(sr)
                 }
             }
 
