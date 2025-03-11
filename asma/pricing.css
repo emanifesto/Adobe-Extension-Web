@@ -4,7 +4,7 @@ body{
 }
 
 .upper-line-block{
-    height: 60px;
+    height: 40px;
 }
 
 p{
@@ -34,6 +34,6 @@ p{
 }
 
 .fine-print{
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 11px;
 }

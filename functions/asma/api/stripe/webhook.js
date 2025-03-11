@@ -36,7 +36,7 @@ export const onRequestPost = async ({request, env}) => {
             }
 
             if (update === "metadata_button"){
-                const trial_check = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}`)
+                const trial_check = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}"`)
                 const trial_response = await trial_check.run()
 
                 if (trial_response.results[0]){
@@ -49,10 +49,10 @@ export const onRequestPost = async ({request, env}) => {
                         }),
                         body: new URLSearchParams({
                             "customer": `${stripeID}`,
-                            "items[price]": `${env.PRODUCT_1_PRICE}}`
+                            "items[price]": `${env.PRODUCT_1_PRICE}`
                         })
                     })
-                    
+
                     const sr = await subscription.json()
                     console.log(sr)
                 }
