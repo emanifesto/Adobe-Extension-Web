@@ -41,7 +41,7 @@ export const onRequestPost = async ({request, env}) => {
 
                 if (trial_response.results[0]){
                     const STRIPE_API_KEY = env.STRIPE_SECRET
-                    const subscription = await fetch(`https://api.stripe.com/v1/subscriptions/:${info.subscription}`, {
+                    const subscription = await fetch(`https://api.stripe.com/v1/subscriptions/${info.subscription}`, {
                         method: "POST",
                         headers: new Headers({
                             "Authorization": `Bearer ${STRIPE_API_KEY}`,
