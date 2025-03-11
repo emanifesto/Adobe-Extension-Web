@@ -35,6 +35,29 @@ export const onRequestPost = async ({request, env}) => {
                 update = "metadata_button"
             }
 
+            if (update === "metadata_button"){
+                const trial_check = env.DB.prepare(`SELECT * FROM users WHERE asma_id = "${asmaID}`)
+                const trial_response = await trial_check.run()
+
+                if (trial_response.results[0]){
+                    const STRIPE_API_KEY = env.STRIPE_SECRET
+                    const subscription = await fetch('https://api.stripe.com/v1/subscriptions', {
+                        method: "POST",
+                        headers: new Headers({
+                            "Authorization": `Bearer ${STRIPE_API_KEY}`,
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        }),
+                        body: new URLSearchParams({
+                            "customer": `${stripeID}`,
+                            "items[price]": `${env.PRODUCT_1_PRICE}}`
+                        })
+                    })
+                    
+                    const sr = await subscription.json()
+                    console.log(sr)
+                }
+            }
+
             query = env.DB.prepare(`INSERT INTO users (asma_id, stripe_id, name, email, ${update}) VALUES ("${asmaID}", "${stripeID}", "${name}", "${email}", "provisioned") ON CONFLICT(asma_id) DO UPDATE SET ${update} = "provisioned"`)
             await query.run()
             break

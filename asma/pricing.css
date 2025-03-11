@@ -32,3 +32,8 @@ p{
     transform: scale(1.2);
     color: #3b71ff;
 }
+
+.fine-print{
+    margin-top: 20px;
+    font-size: 11px;
+}

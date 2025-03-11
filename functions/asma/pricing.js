@@ -40,19 +40,10 @@ export async function onRequest({request, env}){
                     "components[pricing_table][enabled]": true,
                 }),
             })
-            console.log(customerSession)
             const csr = await customerSession.json()
-            console.log(csr) //csr.error.type === "invalid_request_error"
-
             client_secret = csr.client_secret
-            console.log(client_secret)
-
-            // return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
         }
-
-
         return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
     }
-
     return response
 }
