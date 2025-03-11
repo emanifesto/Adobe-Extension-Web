@@ -49,7 +49,7 @@ export const onRequestPost = async ({request, env}) => {
                         }),
                         body: new URLSearchParams({
                             "customer": `${stripeID}`,
-                            "items[]": `{price: ${env.PRODUCT_1_PRICE}}`
+                            "items[]": {price: `${env.PRODUCT_1_PRICE}`}
                         })
                     })
 
