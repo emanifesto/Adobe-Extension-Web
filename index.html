@@ -3,56 +3,50 @@
     <head>
         <title>Dami SaaS</title>
         <link href="asma.css" rel="stylesheet">
-        <style>
-            body{
-                background-color: #404040;
-                color: aliceblue;
-                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                margin: 0;
-            }
-            nav{
-                display: flex;
-                background-color: #282727;
-                margin: 0;
-                height: 40px;
-                padding: 10px 35px;
-            }
-            a{
-                display: inline-block;
-                text-decoration-line: none;
-                color: aliceblue;
-                width: fit-content;
-                height: fit-content;
-            }
-            .nav-elem{
-                margin: 10px;
-                vertical-align: middle;
-            }
-            .quote{
-                text-align: center;
-            }
-            h1{
-                margin: 0;
-                padding: 0 5px;
-            }
-            em{
-                font-family:'Times New Roman', Times, serif;
-            }
-            img{
-                width: auto;
-                height: auto;
-            }
-        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link href="index.css" rel="stylesheet">
+        <link data-default-icon="images/damisaas-nobg.png" rel="shortcut icon" href="images/damisaas-nobg.png">
     </head>
     <body>
-        <nav>
-            <a class="nav-elem" href="https://damisaas.com">
-                <img src="https://damisaas.com/images/damisaas-nobg.png" alt="Dami SaaS icon">
-                <h1>Dami SaaS</h1>
-            </a>
-        </nav>
+        <header>
+            <nav>
+                <div class="nav-elem">
+                    <a href="https://damisaas.com">
+                        <img class="icon" src="images/damisaas-nobg.png" alt="Dami SaaS icon">
+                        <h1>Dami SaaS</h1>
+                    </a>
+                </div>
+                <div class="nav-elem nav-products">
+                    <a href="https://damisaas.com#products">
+                        <h1>Products</h1>
+                    </a>
+                </div>
+            </nav>
+        </header>
         <main>
-            <h1 class="quote"><em>" Software solutions helping entreprenuers around the world "</em></h1>
+            <div class="quote-holder">
+                <h1 class="quote">Driven with the goal of creating software solutions to help entreprenuers around the world in saving time, creating wealth, and attaining freedom</h1>
+            </div>
+            <div class="products" id="products">
+                <h1 class="heading">Products</h1>
+                <ul>
+                    <li class="grad-1">Clear purpose</li>
+                    <li class="grad-2">Feedback driven</li>
+                    <li class="grad-3">Simple, lovable, complete</li>
+                    <li class="grad-4">Stress tested</li>
+                    <li class="grad-5">Only the best</li>
+                </ul>
+                <div class="catalog">
+                    <div class="listing">
+                        <a href="https://damisaas.com/asma">
+                            <img class="product-icon" src="images/asma.png" alt="Logo for Adobe Stock Metadata Automation">
+                        </a>
+                        <span class="caption">Adobe Stock Metadata Automation</span>
+                    </div>
+                </div>
+            </div>
         </main>
     </body>
 </html>
