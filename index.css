@@ -27,6 +27,7 @@ a{
 }
 .quote-holder{
     background-image: url("images/bg-oversea-img.jpg");
+    /* Photo by <a href="https://unsplash.com/@matthardy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Matt Hardy</a> on <a href="https://unsplash.com/photos/body-of-water-under-sky-6ArTTluciuA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
     background-size: cover;
     padding: 200px 0;
     text-align: justify;
