@@ -56,7 +56,8 @@ h1{
     height: 70px;
 }
 .products{
-    margin-top: 180px;
+    margin-top: 130px;
+    margin-bottom: 15px;
     padding: 0 120px;
 }
 .heading{
@@ -100,7 +101,7 @@ li{
 .catalog{
     width: 100%;
     height: fit-content;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 20px 40px;
     border-radius: 18px;
     background-color: #282727;
