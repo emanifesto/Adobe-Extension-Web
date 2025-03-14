@@ -45,4 +45,7 @@ export async function onRequest({request, env}){
         }
         return new HTMLRewriter().on('stripe-pricing-table', new ClientHandler(client, client_secret)).transform(response)
     }
+    
+    const retry = await env.ASSETS.fetch('https://damisaas.com/asma')
+    return retry
 }
