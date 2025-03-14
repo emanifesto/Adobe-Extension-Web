@@ -1,6 +1,6 @@
 body{
-    background-color: black;
-    color: aliceblue;
+    background-color: white;
+    color: black;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
@@ -127,4 +127,5 @@ li{
     text-align: justify;
     text-align-last: center;
     margin: 0 auto;
+    color: aliceblue;
 }
