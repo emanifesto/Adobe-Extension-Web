@@ -137,7 +137,6 @@ h2{
 }
 .setup{
     background-color: black;
-    /* text-align: center; */
 }
 .setup-header{
     background-color: violet;
@@ -167,14 +166,12 @@ li{
     align-content: center;
 }
 .setup-sect{
-    margin: 0 0 75px;
-    padding: 0 137px;
+    margin: 0 auto 75px;
 }
 .setup-text{
     font-size: 50px;
     margin: 0;
-    width: 648px;
-    max-width: 1000px;
+    max-width: 648px;
     text-align: center;
     color: #eee;
 }
@@ -183,6 +180,26 @@ li{
     font-size: 20px;
     margin: 10px auto;
     text-decoration-line: underline;
+}
+.pricing{
+    background-color: black;
+}
+.pricing-header{
+    background-color: indianred;
+}
+.pricing-img{
+    display: block;
+    min-width: 45%;
+    height: 70%;
+    border-radius: 20px;
+    margin: 0 auto;
+    align-content: center;
+}
+.pricing-text{
+    margin: 20px auto 0;
+    font-size: 25px;
+    max-width: fit-content;
+    color: aliceblue;
 }
 
 /*borders around features while background remains black;add some gradient either on name bg, name text, or info bg*/
