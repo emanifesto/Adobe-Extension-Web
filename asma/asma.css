@@ -186,21 +186,44 @@ li{
 }
 .pricing-header{
     background-color: indianred;
+    margin-bottom: 15px;
+}
+.pricing-holder{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
 }
 .pricing-img{
     display: block;
-    min-width: 45%;
-    height: 70%;
+    width: auto;
+    max-height: 620px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 20px auto;
     align-content: center;
 }
+.pricing-text-box{
+    width: 400px;
+    align-content: center;
+    margin: 0 auto;
+}
 .pricing-text{
-    margin: 20px auto 0;
-    font-size: 25px;
-    max-width: fit-content;
+    margin: 0 auto 60px;
+    font-size: 30px;
+    text-align: center;
+    text-align-last: right;
+    align-content: center;
     color: aliceblue;
 }
-
-/*borders around features while background remains black;add some gradient either on name bg, name text, or info bg*/
-/*next section looks like hero section*/
+.contact{
+    background-color: black;
+}
+.contact-header{
+    background-color: bisque;
+    margin-bottom: 15px;
+}
+.contact-text{
+    color: aliceblue;
+    margin: 0 auto;
+    width: fit-content;
+}
