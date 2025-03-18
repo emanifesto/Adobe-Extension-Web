@@ -1,0 +1,33 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+nav{
+    display: flex;
+    background-color: #282727;
+    margin: 0;
+    height: 5%;
+    padding: 10px 35px;
+}
+a{
+    display: flex;
+    text-decoration-line: none;
+    color: aliceblue;
+    width: fit-content;
+    height: fit-content;
+}
+/* .nav-elem{
+    vertical-align: middle;
+} */
+.nav-products{
+    text-align: right;
+    margin: 0 0 0 auto;
+}
+.main-icon{
+    width: 35px;
+    height: 35px;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}

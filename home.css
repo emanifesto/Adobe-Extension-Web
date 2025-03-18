@@ -1,0 +1,97 @@
+body{
+    background-color: white;
+    color: black;
+}
+.quote-holder{
+    background-image: url("images/bg-oversea-img.jpg");
+    /* Photo by <a href="https://unsplash.com/@matthardy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Matt Hardy</a> on <a href="https://unsplash.com/photos/body-of-water-under-sky-6ArTTluciuA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+    background-size: cover;
+    padding: 200px 0;
+    text-align: center;
+}
+.quote{
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: italic;
+    font-size: 40px;
+    color: black;
+    max-width: fit-content;
+    padding: 0 25px;
+}
+.products{
+    margin-top: 130px;
+    margin-bottom: 15px;
+    padding: 0 120px;
+}
+.heading{
+    font-size: 80px;
+}
+ul{
+    list-style-type: none;
+    font-size: 50px;
+    margin: 0;
+}
+li{
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width:fit-content;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Concert One", sans-serif;
+    max-width: fit-content;
+}
+.grad-1{
+    background-image: linear-gradient(90deg, rgb(233, 115, 47), #fc326c);
+    margin: 15px 0;
+}
+.grad-2{
+    background-image: linear-gradient(90deg, #fc326c, #6441e2);
+    margin: 15px 60% 15px auto;
+}
+.grad-4{
+    background-image: linear-gradient(90deg, #a15af0, #105ffb);
+    margin: 15px 15% 15px auto;
+}
+.grad-5{
+    background-image: linear-gradient(90deg, #00b6e0, #12e3a3);
+    margin: 15px 0 15px auto;
+}
+.grad-3{
+    -webkit-text-fill-color: #404040;
+    margin: 15px auto;
+    min-width: 350px;
+}
+.catalog{
+    width: 100%;
+    height: fit-content;
+    margin: 60px auto;
+    padding: 20px 40px;
+    border-radius: 18px;
+    background-color: #282727;
+    display: flex;
+}
+.listing{
+    width: 200px;
+    padding: auto;
+    margin: 0 20px;
+    text-align: center;
+    align-items: center;
+}
+.product-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 5px 25px;
+}
+.caption{
+    font-size: 14px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: justify;
+    text-align-last: center;
+    margin: 0 auto;
+    color: aliceblue;
+}
