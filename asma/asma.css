@@ -42,8 +42,7 @@ body{
     font-size: 18px;
 }
 .vid{
-    /* background-color: black; */
-    margin-bottom: 40px;
+    padding: 60px 0 180px;
 }
 .vid-inner{
     width: 80%;
@@ -53,20 +52,29 @@ body{
     background-color: white;
 }
 h2{
-    font-size: 50px;
+    font-size: 60px;
     margin: 0 auto 30px 10%;
     padding: 10px;
     width: fit-content;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 400;
+    font-style: oblique;
+    font-family: "Concert One", sans-serif;
+}
+em{
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to left, red, rgb(248, 55, 87))
 }
 .vid-header{
-    background-image: linear-gradient(45deg, #fb6327, #ffa51d)
+    /* background-image: linear-gradient(45deg, #fb6327, #ffa51d); */
+    background-image: linear-gradient(to right, rgb(233, 115, 47), #fc326c);
 }
 .benefits{
     background-color: white;
     color: black;
-    padding: 50px 0;
+    padding: 100px 0;
 }
 .benefits-header{
     background-color: black;
@@ -95,15 +103,16 @@ h2{
 }
 .features{
     background-color: white;
-    padding: 10px;
+    padding: 100px 10px;
 }
 .features-header{
-    background-color: chocolate;
+    /* background-image: linear-gradient(to left, #282727, #999); */
+    background-image: linear-gradient(90deg, #fc326c, #6441e2);
 }
 .features-inner{
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: black;/*make the section not look so boring; icons maybe */
     width: 80%;
     margin: 0 auto;
     padding: 0 20px;
@@ -137,9 +146,10 @@ h2{
 }
 .setup{
     background-color: black;
+    padding: 50px 0;
 }
 .setup-header{
-    background-color: violet;
+    background-image: linear-gradient(to left, #3b71ff, #1da5ff);
 }
 .setup-list{
     width: 70%;
@@ -182,10 +192,11 @@ li{
     text-decoration-line: underline;
 }
 .pricing{
-    background-color: black;
+    padding: 50px 0;
 }
 .pricing-header{
-    background-color: indianred;
+    /* background-image: linear-gradient(to left, rgb(134, 246, 22), rgb(16, 236, 78)); */
+    background-image: linear-gradient(90deg, #00b6e0, #12e3a3);
     margin-bottom: 15px;
 }
 .pricing-holder{
@@ -216,14 +227,41 @@ li{
     color: aliceblue;
 }
 .contact{
-    background-color: black;
+    padding: 50px 0;
 }
 .contact-header{
-    background-color: bisque;
-    margin-bottom: 15px;
+    background-image: linear-gradient(45deg, #fb6327, #ffa51d);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+.contact-vid{
+    display: block;
+    width: auto;
+    height: 500px;
+    margin: 30px auto;
+    border-radius: 30px;
 }
 .contact-text{
+    display: flex;
     color: aliceblue;
-    margin: 0 auto;
+    font-size: 30px;
+    margin: 25px auto;
     width: fit-content;
 }
+.contact-email{
+    text-decoration-line: underline;
+    transition: color 250ms ease-in-out;
+}
+.contact-email:hover{
+    color: #282727;
+}
+
+
+/* font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: ?; */
+
+    /* font-weight: ?;
+    font-style: normal;
+    font-family: "Concert One", sans-serif; */
