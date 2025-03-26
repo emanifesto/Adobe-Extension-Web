@@ -4,26 +4,26 @@ body{
 }
 .hero{
     text-align: center;
-    padding: 180px 0;
+    padding: 24vh 0;
 }   
 .atten-grab{
     margin: 0 auto;
-    padding: 0 25px;
-    font-size: 65px;
+    padding: 0 1.6vw;
+    font-size: 8.8vh;
     max-width: 670px;
 }
 .capt{
     color: #ccc;
-    font-size: 18px;
-    margin: 20px auto 40px;
-    padding: 0 25px;
+    font-size: 2.44vh;
+    margin: 2.67vh auto 5.33vh;
+    padding: 0 1.6vw;
     max-width: 600px;
 }
 .ctv{
-    margin: 20px auto 0;
+    margin: 2.67vh auto 0;
     padding: 5px ;
-    width: 280px;
-    height: 40px;
+    width: max(18.3vw, 280px);
+    height: max(5.33vh, 40px);
     border-radius: 25px;
     background-color: #282727;
     transform: scale(1);
@@ -39,20 +39,28 @@ body{
 }
 .ctv-text{
     margin: auto auto auto 5px;
-    font-size: 18px;
+    font-size: 2.44vh;
 }
 .vid{
-    padding: 60px 0 180px;
+    padding: 0 0 24vh;
 }
 .vid-inner{
+    align-content: center;
     width: 80%;
-    height: 600px;
-    margin: 40px auto 0;
+    min-width: 450px;
+    height: 81.2vh;
+    margin: 5.33vh auto 0;
     border-radius: 50px;
     background-color: white;
 }
+.vid-asma{
+    display: flex;
+    margin: 0 auto;
+    width: max(300px, 60%);
+    height: 425px;
+}
 h2{
-    font-size: 60px;
+    font-size: 8vh;
     margin: 0 auto 30px 10%;
     padding: 10px;
     width: fit-content;
@@ -69,12 +77,12 @@ em{
 }
 .vid-header{
     /* background-image: linear-gradient(45deg, #fb6327, #ffa51d); */
-    background-image: linear-gradient(to right, rgb(233, 115, 47), #fc326c);
+    background-image: linear-gradient(to left, rgb(250, 30, 30), #f45124);
 }
 .benefits{
     background-color: white;
     color: black;
-    padding: 100px 0;
+    padding: 10vh 0;
 }
 .benefits-header{
     background-color: black;
@@ -87,27 +95,35 @@ em{
 }
 .benefits-sect{
     background-color: #ddd;
-    height: 600px;
-    margin: 0 auto 20px;
+    height: 81.2vh;
+    margin: 0 auto 40px;
     border-radius: 18px;
     text-align: center;
     width: 320px;
 }
 .benefits-text{
-    font-size: 20px;
+    font-size: 2.7vh;
     max-width: 200px;
-    min-width: 150px;
-    height: 75px;
+    min-width: 150px; 
+    height: 10.15vh;
     margin: 20px auto;
     align-content: center;
 }
+.benefits-vid{
+    object-fit: cover;
+    aspect-ratio: 0.678;
+    border-radius: 10px;
+    height: auto;
+    width: 90%;
+}
 .features{
     background-color: white;
-    padding: 100px 10px;
+    padding: 10vh 10px;
 }
 .features-header{
     /* background-image: linear-gradient(to left, #282727, #999); */
-    background-image: linear-gradient(90deg, #fc326c, #6441e2);
+    /* background-image: linear-gradient(90deg, #fc326c, #6441e2); */
+    background-color: black;
 }
 .features-inner{
     display: flex;
@@ -117,19 +133,18 @@ em{
     margin: 0 auto;
     padding: 0 20px;
     border-radius: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 13.54vh;
 }
 .features-sect{
-    height: 150px;
+    height: 20.3vh;
     width: 450px;
-    margin: 40px auto;
+    margin: 5.33vh auto;
     display: flex;
-    border:#282727 10px;
-    border-style:double;
+    border:#282727 10px double;
     border-radius: 20px;
 }
 .features-text{
-    font-size: 25px;
+    font-size: 3.38vh;
     background-image: linear-gradient(to left, #404040, #282727);
     color: aliceblue;
     margin: 0;
@@ -138,7 +153,7 @@ em{
     align-content: center;
 }
 .features-info{
-    font-size: 19px;
+    font-size: 2.57vh;
     margin: 0;
     padding: 0 15px;
     text-align: center;
@@ -146,7 +161,7 @@ em{
 }
 .setup{
     background-color: black;
-    padding: 50px 0;
+    padding: 6.77vh 0;
 }
 .setup-header{
     background-image: linear-gradient(to left, #3b71ff, #1da5ff);
@@ -167,7 +182,7 @@ li{
     counter-increment: item;
     border: white solid 6px;
     border-radius: 100%;
-    font-size: 30px;
+    font-size: 4.06vh;
     min-width: 60px;
     max-width: 60px;
     min-height: 60px;
@@ -176,10 +191,10 @@ li{
     align-content: center;
 }
 .setup-sect{
-    margin: 0 auto 75px;
+    margin: 0 auto 10.15vh;
 }
 .setup-text{
-    font-size: 50px;
+    font-size: 6.77vh;
     margin: 0;
     max-width: 648px;
     text-align: center;
@@ -187,16 +202,16 @@ li{
 }
 .setup-apikey{
     color: red;
-    font-size: 20px;
+    font-size: 2.71vh;
     margin: 10px auto;
     text-decoration-line: underline;
 }
 .pricing{
-    padding: 50px 0;
+    padding: 6.77vh 0;
 }
 .pricing-header{
     /* background-image: linear-gradient(to left, rgb(134, 246, 22), rgb(16, 236, 78)); */
-    background-image: linear-gradient(90deg, #00b6e0, #12e3a3);
+    background-image: linear-gradient(90deg, #00b6e0, #25aef8);
     margin-bottom: 15px;
 }
 .pricing-holder{
@@ -208,9 +223,9 @@ li{
 .pricing-img{
     display: block;
     width: auto;
-    max-height: 620px;
+    max-height: 84vh;
     border-radius: 20px;
-    margin: 20px auto;
+    margin: 0 auto 40px;
     align-content: center;
 }
 .pricing-text-box{
@@ -219,15 +234,15 @@ li{
     margin: 0 auto;
 }
 .pricing-text{
-    margin: 0 auto 60px;
-    font-size: 30px;
+    margin: 0 auto 8.12vh;
+    font-size: 4.06vh;
     text-align: center;
     text-align-last: right;
     align-content: center;
     color: aliceblue;
 }
 .contact{
-    padding: 50px 0;
+    padding: 6.77vh 0;
 }
 .contact-header{
     background-image: linear-gradient(45deg, #fb6327, #ffa51d);
@@ -237,16 +252,16 @@ li{
 }
 .contact-vid{
     display: block;
-    width: auto;
-    height: 500px;
-    margin: 30px auto;
+    width: 60%;
+    height: auto;
+    margin: 4.06vh auto;
     border-radius: 30px;
 }
 .contact-text{
     display: flex;
     color: aliceblue;
-    font-size: 30px;
-    margin: 25px auto;
+    font-size: 4.06vh;
+    margin: 3.38vh auto;
     width: fit-content;
 }
 .contact-email{

@@ -6,8 +6,8 @@ nav{
     display: flex;
     background-color: #282727;
     margin: 0;
-    height: 5%;
-    padding: 10px 35px;
+    height: fit-content;
+    padding: 10px 30px;
 }
 a{
     display: flex;
