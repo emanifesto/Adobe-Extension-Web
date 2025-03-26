@@ -55,7 +55,7 @@ body{
 }
 .vid-asma{
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto; /*aspect ratio*/
     width: max(300px, 60%);
     height: 425px;
 }
@@ -106,15 +106,17 @@ em{
     max-width: 200px;
     min-width: 150px; 
     height: 10.15vh;
-    margin: 20px auto;
+    margin: 10px auto;
     align-content: center;
 }
 .benefits-vid{
     object-fit: cover;
     aspect-ratio: 0.678;
-    border-radius: 10px;
-    height: auto;
-    width: 90%;
+    border-radius: 15px;
+    /* height: auto;
+    width: 90%; */
+    height: 72%;
+    width: auto;
 }
 .features{
     background-color: white;
@@ -252,7 +254,7 @@ li{
 }
 .contact-vid{
     display: block;
-    width: 60%;
+    width: 55%;
     height: auto;
     margin: 4.06vh auto;
     border-radius: 30px;
