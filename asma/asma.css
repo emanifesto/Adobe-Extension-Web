@@ -257,7 +257,7 @@ li{
     width: 55%;
     height: auto;
     margin: 4.06vh auto;
-    border-radius: 30px;
+    border-radius: 15px;
 }
 .contact-text{
     display: flex;
@@ -266,11 +266,11 @@ li{
     margin: 3.38vh auto;
     width: fit-content;
 }
-.contact-email{
+.contact-link{
     text-decoration-line: underline;
     transition: color 250ms ease-in-out;
 }
-.contact-email:hover{
+.contact-link:hover{
     color: #282727;
 }
 
