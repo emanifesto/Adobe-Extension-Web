@@ -7,7 +7,7 @@ nav{
     background-color: #282727;
     margin: 0;
     height: fit-content;
-    padding: 10px 30px;
+    padding: 10px 1.5rem;
 }
 a{
     display: flex;
@@ -15,21 +15,24 @@ a{
     color: aliceblue;
     width: fit-content;
     height: fit-content;
+    align-items: center;
 }
-/* .nav-elem{
-    vertical-align: middle;
-} */
+.nav-elem{
+    align-content: center;
+}
 .nav-products{
     text-align: right;
     margin: 0 0 0 auto;
 }
 .main-icon{
-    width: 35px;
-    height: 35px;
+    width: 2rem;
+    height: 2rem;
 }
 h1{
     margin: 0;
     padding: 0;
+    height: fit-content;
+    display: flex;
 }
 footer{
     background-color: #282727;

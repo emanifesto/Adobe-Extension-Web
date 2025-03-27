@@ -1,3 +1,4 @@
+
 body{
     background-color: black;
     color:aliceblue;
@@ -9,12 +10,12 @@ body{
 .atten-grab{
     margin: 0 auto;
     padding: 0 1.6vw;
-    font-size: 8.8vh;
+    font-size: 4.0625em;
     max-width: 670px;
 }
 .capt{
     color: #ccc;
-    font-size: 2.44vh;
+    font-size: 1.125rem;
     margin: 2.67vh auto 5.33vh;
     padding: 0 1.6vw;
     max-width: 600px;
@@ -22,16 +23,16 @@ body{
 .ctv{
     margin: 2.67vh auto 0;
     padding: 5px ;
-    width: max(18.3vw, 280px);
-    height: max(5.33vh, 40px);
+    width: 17.5rem;
+    height: 40px;
     border-radius: 25px;
     background-color: #282727;
     transform: scale(1);
     transition: background-image scale 250ms ease-in-out;
 }
 .asma-logo{
-    height: 32px;
-    width: 32px;
+    height: 2rem;
+    width: 2rem;
     margin: auto 5px auto auto;
 }
 .ctv:hover{
@@ -39,7 +40,7 @@ body{
 }
 .ctv-text{
     margin: auto auto auto 5px;
-    font-size: 2.44vh;
+    font-size: 1.125rem;
 }
 .vid{
     padding: 0 0 24vh;
@@ -47,7 +48,7 @@ body{
 .vid-inner{
     align-content: center;
     width: 80%;
-    min-width: 450px;
+    /* min-width: 450px; */
     height: 81.2vh;
     margin: 5.33vh auto 0;
     border-radius: 50px;
@@ -55,12 +56,13 @@ body{
 }
 .vid-asma{
     display: flex;
-    margin: 0 auto; /*aspect ratio*/
-    width: max(300px, 60%);
-    height: 425px;
+    margin: 0 auto;
+    aspect-ratio: 1.77;
+    width: 60%;
+    height: auto;
 }
 h2{
-    font-size: 8vh;
+    font-size: 3.75rem;
     margin: 0 auto 30px 10%;
     padding: 10px;
     width: fit-content;
@@ -102,7 +104,7 @@ em{
     width: 320px;
 }
 .benefits-text{
-    font-size: 2.7vh;
+    font-size: 1.25rem;
     max-width: 200px;
     min-width: 150px; 
     height: 10.15vh;
@@ -146,7 +148,7 @@ em{
     border-radius: 20px;
 }
 .features-text{
-    font-size: 3.38vh;
+    font-size: 1.5625rem;
     background-image: linear-gradient(to left, #404040, #282727);
     color: aliceblue;
     margin: 0;
@@ -155,7 +157,7 @@ em{
     align-content: center;
 }
 .features-info{
-    font-size: 2.57vh;
+    font-size: 1.125rem;
     margin: 0;
     padding: 0 15px;
     text-align: center;
@@ -184,7 +186,7 @@ li{
     counter-increment: item;
     border: white solid 6px;
     border-radius: 100%;
-    font-size: 4.06vh;
+    font-size: 1.875rem;
     min-width: 60px;
     max-width: 60px;
     min-height: 60px;
@@ -196,7 +198,7 @@ li{
     margin: 0 auto 10.15vh;
 }
 .setup-text{
-    font-size: 6.77vh;
+    font-size: 3.125rem;
     margin: 0;
     max-width: 648px;
     text-align: center;
@@ -204,7 +206,7 @@ li{
 }
 .setup-apikey{
     color: red;
-    font-size: 2.71vh;
+    font-size: 1.25rem;
     margin: 10px auto;
     text-decoration-line: underline;
 }
@@ -237,7 +239,7 @@ li{
 }
 .pricing-text{
     margin: 0 auto 8.12vh;
-    font-size: 4.06vh;
+    font-size: 1.875rem;
     text-align: center;
     text-align-last: right;
     align-content: center;
@@ -261,10 +263,12 @@ li{
 }
 .contact-text{
     display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
     color: aliceblue;
-    font-size: 4.06vh;
+    font-size: 1.875rem;
     margin: 3.38vh auto;
-    width: fit-content;
+    width: 70%;
 }
 .contact-link{
     text-decoration-line: underline;
@@ -274,6 +278,43 @@ li{
     color: #282727;
 }
 
+@media (max-width: 768px) {
+    html{
+        font-size: 13px;
+    }
+    .vid-inner{
+        height: 70vh;
+    }
+    .vid-asma{
+        height: 75%;
+        width: auto;
+        aspect-ratio: 0.7;
+    }
+    .features-text{
+        min-width: 130px;
+    }
+    .pricing-img{
+        max-height: 70vh;
+    }
+    .contact-vid{
+        width: 85%;
+    }
+    .setup-list{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 380px){
+    html{
+        font-size:11px;
+    }
+    .pricing-img{
+        max-height: 60vh;
+    }
+    .vid-asma{
+        height: 60%;
+    }
+}
 
 /* font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
