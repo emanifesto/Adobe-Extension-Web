@@ -9,7 +9,6 @@ function stall(ms){
 
 const ctvObserver = new IntersectionObserver( (entries) => {
     entries.forEach(async (entry) => {
-        console.log(entry)
         if (entry.target.className === 'ctv'){
             if (entry.isIntersecting){
                 ctv.classList.remove('persist')
