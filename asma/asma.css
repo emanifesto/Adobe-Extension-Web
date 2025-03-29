@@ -5,23 +5,23 @@ body{
 }
 .hero{
     text-align: center;
-    padding: 24vh 0;
+    padding: 180px 0;
 }   
 .atten-grab{
     margin: 0 auto;
     padding: 0 1.6vw;
-    font-size: 4.0625em;
+    font-size: 4.0625rem;
     max-width: 670px;
 }
 .capt{
     color: #ccc;
     font-size: 1.125rem;
-    margin: 2.67vh auto 5.33vh;
+    margin: 20px auto 40px;
     padding: 0 1.6vw;
     max-width: 600px;
 }
 .ctv{
-    margin: 2.67vh auto 0;
+    margin: 20px auto 0;
     padding: 5px ;
     width: 17.5rem;
     height: 40px;
@@ -315,6 +315,17 @@ li{
         height: 60%;
     }
 }
+/* 
+@media (min-width: 1210px){
+    .persist{
+        opacity: 60%;
+        position: fixed;
+        left: calc(50% - 8.75rem);
+        bottom: 7vh;
+        transform: scale(0.9);
+        transition: position opacity left bottom 2s ease-in-out;
+    }
+} */
 
 /* font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
