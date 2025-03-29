@@ -315,7 +315,7 @@ li{
         height: 60%;
     }
 }
-/* 
+
 @media (min-width: 1210px){
     .persist{
         opacity: 60%;
@@ -325,7 +325,7 @@ li{
         transform: scale(0.9);
         transition: position opacity left bottom 2s ease-in-out;
     }
-} */
+}
 
 /* font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
