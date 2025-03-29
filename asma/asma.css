@@ -28,7 +28,9 @@ body{
     border-radius: 25px;
     background-color: #282727;
     transform: scale(1);
-    transition: background-image scale 250ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    /* transition: opacity translateY 1s ease-in-out; */
+    /* transition: all 2s; */
 }
 .asma-logo{
     height: 2rem;
@@ -317,13 +319,23 @@ li{
 }
 
 @media (min-width: 1210px){
-    .persist{
-        opacity: 60%;
+
+    .sticky-btn{
         position: fixed;
         left: calc(50% - 8.75rem);
         bottom: 7vh;
         transform: scale(0.9);
-        transition: position opacity left bottom 2s ease-in-out;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .persist{
+        opacity: 60%;
+        display: flex;
     }
 }
 
