@@ -323,7 +323,7 @@ li{
     .sticky-btn{
         position: fixed;
         left: calc(50% - 8.75rem);
-        bottom: 5vh;
+        bottom: 4vh;
         transform: scale(0.9);
         opacity: 0;
         transition: opacity 1s ease-in-out;
