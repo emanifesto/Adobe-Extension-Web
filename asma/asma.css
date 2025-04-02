@@ -318,6 +318,10 @@ li{
     }
 }
 
+.hidden{
+    display: none;
+}
+
 @media (min-width: 1210px){
 
     .sticky-btn{
@@ -327,10 +331,6 @@ li{
         transform: scale(0.9);
         opacity: 0;
         transition: opacity 1s ease-in-out;
-    }
-
-    .hidden{
-        display: none;
     }
 
     .persist{
