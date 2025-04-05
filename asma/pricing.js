@@ -10,5 +10,5 @@ const changeDetector = new MutationObserver((changes) => {
 
 setTimeout(function(){
     Object.freeze(pricing_table)
-}, 0)
+}, 4000)
 changeDetector.observe(pricing_table, {attributeFilter: ["client-reference-id", 'customer-session-client-secret'], attributeOldValue: true,})
