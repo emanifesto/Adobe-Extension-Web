@@ -5,6 +5,7 @@ export const onRequestPost = async ({request, env}) => {
     const body = await request.json()
 
     if (extensionID !== origin && origin !== "chrome-extension://lehhemblaphofbjggfeikofibkppokmj"){
+
         return new Response('Fail', {status: 400})
     }
 
