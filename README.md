@@ -4,5 +4,6 @@ Landing page to increase conversions for the Adobe Stock Metadata Automation ext
 User Authentication, Stripe webhooks, and email routing are handled through
 serverless functions hosted on Cloudflare.
 Built with vanilla JS, HTML, and CSS, and database interaction achieved with SQLite.
+Sitemap, robots.txt, and metadata implemented for better SEO.
 
 **[Extension Github Repo](https://github.com/Emmanuel1037/Adobe-Extension)**
