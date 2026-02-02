@@ -1,0 +1,49 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+nav{
+    display: flex;
+    background-color: #282727;
+    margin: 0;
+    height: fit-content;
+    padding: 10px 1.5rem;
+}
+a{
+    display: flex;
+    text-decoration-line: none;
+    color: aliceblue;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+.nav-elem{
+    align-content: center;
+}
+.nav-products{
+    text-align: right;
+    margin: 0 0 0 auto;
+}
+.main-icon{
+    width: 2rem;
+    height: 2rem;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    display: flex;
+}
+footer{
+    background-color: #282727;
+    margin: 0;
+    padding: 50px 0;
+    color: aliceblue;
+}
+.legal{
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1;
+}
