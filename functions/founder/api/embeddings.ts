@@ -96,7 +96,7 @@ export const onRequestDelete = async({request, env}: {request:Request, env: Env}
     const {id} = await request.json()
 
     const query = `DELETE FROM Documents WHERE id = (?)`
-    await env.DB.prepare(query).bind(id).run()
+    await env.DB.prepare(query).bind(id).run() 
 
     await env.VECTOR.deleteByIds([id])
 }
