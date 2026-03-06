@@ -12,7 +12,7 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
 
     console.log(data)
     return new Response('OK', {status: 200})
-}
+} 
 
     // const id = results[0].id
 
