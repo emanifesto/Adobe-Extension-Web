@@ -7,15 +7,11 @@ interface Env{
 export const onRequestPost = async ({request, env}: {request: Request, env: Env}) => {
 
     const {notes} = await request.json()
-    try{
-        const query = `INSERT INTO Documents notes VALUES (?)`
-        const { results } = env.DB.prepare(query).bind(notes).run()
-    }
-    catch(e){
-        console.log(e)
-        return new Response('Failed', {status: 400})
-    }
-    return new Response('OK')
+    const query = `INSERT INTO Documents notes VALUES (?)`
+    const data = env.DB.prepare(query).bind(notes).run()
+
+    console.log(data)
+    return new Response('OK', {status: 200})
 }
 
     // const id = results[0].id
