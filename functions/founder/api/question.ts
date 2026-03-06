@@ -66,7 +66,7 @@ interface Env {
 
 export const onRequestPost = async ({ request, env }: { request: Request, env: Env }) => {
 
-    const { question } = await request.json()
+    const question = await request.text()
 
     const embeddings = await env.AI.run('@cf/baai/bge-base-en-v1.5', {
         text: question,
