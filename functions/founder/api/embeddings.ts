@@ -41,12 +41,12 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
 }
 
 export const onRequestDelete = async({request, env}: {request:Request, env: Env}) => {
-    const {ids} = await request.json()
+    const {id} = await request.json()
 
-    const query = `DELETE FROM Documents WHERE id in (?)`
-    await env.DB.prepare(query).bind(ids).run() 
+    const query = `DELETE FROM Documents WHERE id = (?)`
+    await env.DB.prepare(query).bind(id).run()
 
-    await env.VECTOR.deleteByIds(ids)
+    await env.VECTOR.deleteByIds(id)
 
     return new Response(JSON.stringify({message:'Success'}), {status: 200})
 }
