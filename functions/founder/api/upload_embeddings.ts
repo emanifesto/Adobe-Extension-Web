@@ -5,7 +5,10 @@ interface Env{
 }
 
 export const onRequestPost = async ({request, env}: {request: Request, env: Env}) => {
+    console.log(request)
+
     const {notes} = await request.json()
+    console.log(notes)
     const query = `INSERT INTO Documents notes VALUES (?)`
     const { results } = env.DB.prepare(query).bind(notes).run()
 
