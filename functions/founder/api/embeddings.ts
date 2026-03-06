@@ -16,7 +16,7 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
     const {results} = await env.DB.prepare(query).bind(notes).run()
 
     if (!results){
-        return new Response('Fail', {status: 400})
+        return new Response(JSON.stringify({message:'Fail'}), {status: 400})
     }
 
     const id = results[0].id
@@ -27,7 +27,7 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
     })
 
     if (!embeddings){
-        return new Response('Fail', {status: 400})
+        return new Response(JSON.stringify({message:'Fail'}), {status: 400})
     }
 
     const values = embeddings.data[0]
@@ -41,7 +41,7 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
     ])
 
     console.log(final)
-    return new Response('Success', {status: 200})
+    return new Response(JSON.stringify({message:'Success'}), {status: 200})
 }
 
 export const onRequestGet = async({request, env}: {request:Request, env:Env}) => {
@@ -65,7 +65,7 @@ export const onRequestGet = async({request, env}: {request:Request, env:Env}) =>
     let notes = []
     
     if (!vecId){
-        return new Response('Fail', {status: 400})
+        return new Response(JSON.stringify({message:'Fail'}), {status: 400})
     } else {
         const query = `SELECT * FROM Documents WHERE id = ?`
         const {results} = await env.DB.prepare(query).bind(vecId).run()
@@ -99,4 +99,6 @@ export const onRequestDelete = async({request, env}: {request:Request, env: Env}
     await env.DB.prepare(query).bind(id).run() 
 
     await env.VECTOR.deleteByIds([id])
+
+    return new Response(JSON.stringify({message:'Success'}), {status: 200})
 }
