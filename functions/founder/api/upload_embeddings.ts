@@ -15,6 +15,7 @@ export const onRequestPost = async ({request, env}: {request: Request, env: Env}
         console.log(e)
         return new Response('Failed', {status: 400})
     }
+    return new Response('OK')
 }
 
     // const id = results[0].id
