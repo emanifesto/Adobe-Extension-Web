@@ -110,5 +110,5 @@ export const onRequestPost = async ({ request, env }: { request: Request, env: E
     })
     console.log(response)
 
-    return new Response(JSON.stringify(response), { status: 200 })
+    return new Response(JSON.stringify({response: response.response}), { status: 200 })
 }
