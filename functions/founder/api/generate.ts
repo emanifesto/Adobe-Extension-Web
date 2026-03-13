@@ -33,7 +33,6 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
       }
     })
     console.log(response)
-    console.log(await response.json())
     console.log(Response.json(response))
 
     return new Response('OK', {status: 200})
