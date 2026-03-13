@@ -1,5 +1,6 @@
 export const onRequestGet = async ({request, env}: {request: Request, env: {AI: any}}) => {
     const characterReference = await fetch('https://damisaas.com/founder/headshot.jpg')
+    const blob = await characterReference.blob()
 
     const jobTitles = ["Software Engineer & Founder", "Java Supplemental Instructor", "AI/ML Researcher"]
     const artSytles = ["Anime", "Comic", "Pop", "Surrealism", "Cubism", "Chibi"]
@@ -12,7 +13,7 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
 
     const inputs = {
         'prompt': `Using character reference, create an image of a ${job} in a unique random relevant setting. ${style} art-style.`,
-        'image': [...new Uint8Array(await characterReference.arrayBuffer())],
+        'image': [...new Uint8Array(await blob.arrayBuffer())],
         width: 960,
         height: 540,
     }
