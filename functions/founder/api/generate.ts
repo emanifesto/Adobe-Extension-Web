@@ -32,9 +32,5 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
         contentType: formContentType
       }
     })
-    console.log(response)
-    console.log(Response.json(response))
-
-    return new Response('OK', {status: 200})
-    // return Response.json(response)
+      return Response.json(response)
 }
