@@ -32,5 +32,6 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
         contentType: formContentType
       }
     })
-      return Response.json(response)
+
+    return Response.json(response)
 }
