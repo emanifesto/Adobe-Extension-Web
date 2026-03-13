@@ -1,5 +1,5 @@
 export const onRequestGet = async ({request, env}: {request: Request, env: {AI: any}}) => {
-    const characterReference = await fetch('https://damisaas.com/founder/headshot.jpg')
+    const characterReference = await fetch('https://damisaas.com/assets/images/headshot.jpg')
     const blob = await characterReference.blob()
 
     const jobTitles = ["Software Engineer & Founder", "Java Supplemental Instructor", "AI/ML Researcher"]
