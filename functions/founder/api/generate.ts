@@ -1,5 +1,4 @@
 export const onRequestGet = async ({request, env}: {request: Request, env: {AI: any}}) => {
-    // const characterReference = await fetch('https://damisaas.com/assets/images/headshot.jpg')
 
     const jobTitles = ["Software Engineer & Founder", "Java Supplemental Instructor", "AI/ML Researcher"]
     const artSytles = ["Anime", "Comic", "Pop", "Surrealism", "Cubism", "Chibi"]
@@ -9,13 +8,6 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
 
     const job = jobTitles[idx1]
     const style = artSytles[idx2]
-
-
-    // return new Response(response, {
-    //   headers: {
-    //     "content-type": "image/png",
-    //   },
-    // });
 
     const form = new FormData()
     form.append('prompt', `A male African-American ${job} in a unique random relevant setting. ${style} art-style.`)
