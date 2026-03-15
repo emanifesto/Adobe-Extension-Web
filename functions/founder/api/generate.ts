@@ -9,6 +9,7 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
     const job = jobTitles[idx1]
     const style = artSytles[idx2]
 
+    console.log(job,style)
     const form = new FormData()
     form.append('prompt', `A male African-American ${job} in a unique random relevant setting. ${style} art-style.`)
     form.append('width', '960')
@@ -18,7 +19,7 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
     const formStream = formResponse.body
     const formContentType = formResponse.headers.get('content-type')!
 
-    const response = await env.AI.run("@cf/black-forest-labs/flux-2-klein-9b", {
+    const response = await env.AI.run("@cf/black-forest-labs/flux-2-klein-4b", {//@cf/black-forest-labs/flux-1-schnell @cf/black-forest-labs/flux-2-klein-4b
       multipart: {
         body: formStream,
         contentType: formContentType
