@@ -10,6 +10,7 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
     const style = artSytles[idx2]
 
     console.log(job,style)
+    
     const form = new FormData()
     form.append('prompt', `A scene focused on a male African-American ${job}. ${style} art-style.`)
     form.append('width', '960')
