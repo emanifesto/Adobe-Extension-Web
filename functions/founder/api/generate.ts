@@ -1,6 +1,6 @@
 export const onRequestGet = async ({request, env}: {request: Request, env: {AI: any}}) => {
 
-    const jobTitles = ["Software Engineer & Founder", "Java Supplemental Instructor", "AI/ML Researcher"]
+    const jobTitles = ["Software Engineer", "Java Instructor", "AI/ML Researcher"]
     const artSytles = ["Anime", "Comic", "Pop", "Surrealism", "Cubism", "Chibi"]
 
     const idx1 = Math.floor(Math.random() * jobTitles.length)
@@ -11,7 +11,7 @@ export const onRequestGet = async ({request, env}: {request: Request, env: {AI: 
 
     console.log(job,style)
     const form = new FormData()
-    form.append('prompt', `A male African-American ${job} in a unique random relevant setting. ${style} art-style.`)
+    form.append('prompt', `A scene focused on a male African-American ${job}. ${style} art-style.`)
     form.append('width', '960')
     form.append('height', '540')
 
